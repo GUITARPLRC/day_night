@@ -3,17 +3,53 @@
   padding:0;
 }
 
-#day {
-  width:100%;
-  height:670px;
-  background-image:url(day.jpg);
-  background-repeat:no-repeat;
-  background-size:cover;
+body {
+	overflow:hidden;
 }
-#night {
-  width:100%;
-  height:800px;
-  background-image:url(night.jpg);
-  background-repeat:no-repeat;
-  background-size:cover;
+
+.container {
+	height:100vh;
+	width:100%;
 }
+
+.container img {
+	height:100vh;
+	position:absolute;
+	width:100%;
+}
+.container > #img2 {
+	clip:rect(0px, 50vw, 100vh, 0px);
+}
+
+.container > .activator {
+	cursor:e-resize;
+	height:100vh;
+	opacity:0;
+	position:absolute;
+	width:100%;
+}
+
+.container #airplane {
+	height:auto;
+	left:-150px;
+	position:absolute;
+	top:2%;
+	animation:fly 10s infinite both;
+	animation-timing-function:cubic-bezier(0,.09,1,.83);
+	width:3%;
+}
+@media (max-width:970px) {
+	.container #airplane {
+		visibility:hidden;
+	}
+}
+
+@keyframes fly {
+	0%{
+		left: -200px;
+	}
+	100%{
+		left:200%;
+	};
+}
+
